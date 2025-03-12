@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metrics Extractor</title>
+</head>
+<body>
+    <h2>Enter your text to extract metrics:</h2>
+    <form action="/" method="post">
+        <textarea name="transcription" rows="5" cols="50" placeholder="Type here..."></textarea><br>
+        <button type="submit">Extract Metrics</button>
+    </form>
+
+    {% if extracted_metrics %}
+        <h3>Extracted Metrics:</h3>
+        <p><strong>Physical Win:</strong> {{ extracted_metrics.get('Physical Win', 'N/A') }}</p>
+        <p><strong>Social Highlight:</strong> {{ extracted_metrics.get('Social Highlight', 'N/A') }}</p>
+    {% endif %}
+
+    <p style="color: green;">{{ message }}</p>
+</body>
+</html>
