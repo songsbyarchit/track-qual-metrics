@@ -8,10 +8,11 @@
 <body>
     <h2>Enter your text to extract metrics:</h2>
     <form action="/" method="post">
-        <textarea name="transcription" rows="5" cols="50" placeholder="Type here..."></textarea><br>
+        <textarea id="transcription" name="transcription" rows="5" cols="50" placeholder="Type here..."></textarea><br>
         <button type="submit">Extract Metrics</button>
+        <button type="button" onclick="document.getElementById('transcription').value=''">Reset</button>
     </form>
-
+    
     {% if extracted_metrics %}
         <h3>Extracted Metrics:</h3>
         <p><strong>Physical Win:</strong> {{ extracted_metrics.get('Physical Win', 'N/A') }}</p>

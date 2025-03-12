@@ -12,7 +12,6 @@ def index():
         transcription = request.form.get("transcription")
 
         if transcription.strip():
-            append_to_google_sheet(transcription)  # Process and store in Sheets
             extracted_metrics = append_to_google_sheet(transcription)  # Get extracted data
             message = "✅ Data successfully appended to Google Sheets!"
 
